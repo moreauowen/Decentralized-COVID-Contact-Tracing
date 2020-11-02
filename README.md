@@ -1,2 +1,2 @@
-# Decentralized-COVID-Contact-Tracing
-Blockchain Technologies Group Project
+# BlockTrace
+A decentralized platform for Covid-19 contact tracing. 
