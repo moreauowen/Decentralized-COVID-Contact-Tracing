@@ -7,9 +7,27 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
+  background-color: #EBEBEB;
 }
 
 a {
   color: #333;
   text-decoration: none;
 }
+
+#header {
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #4062BB;
+  color: white;
+  font-size: 20px;
+}
+
+.traceform {
+  padding: 50px;
+  background-color: aqua;
+  width: 500px;
+}
+
