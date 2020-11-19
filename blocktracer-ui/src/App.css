@@ -7,7 +7,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
-  background-color: #EBEBEB;
+  background-color: white;
 }
 
 a {
@@ -20,14 +20,46 @@ a {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #4062BB;
+  background-color: #3A2FBB;
   color: white;
   font-size: 20px;
 }
 
-.traceform {
+#startTrace {
+  margin: auto;
+  margin-top: 5%;
   padding: 50px;
-  background-color: aqua;
   width: 500px;
+  border-radius: 20px;
+  background-color: #3A2FBB;
+  color: white;
+  font-size: 20px;
 }
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#startBtnParent {
+  text-align: center;
+}
+
+#startBtn {
+  height: 50px;
+  width: 200px;
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #FFA500;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
 

@@ -31,29 +31,39 @@ class StartTrace extends Component {
 
     render() {
         return (
-            <form class="traceform" classonSubmit={this.handleSubmit}>
-                <label>
-                    Full Name
-                    <input type="text" value={this.state.fullName} onChange={this.handleChange} />
-                </label>
+            <div id="startTrace">
+                <h2>Start a trace investigation...</h2>
                 <br></br>
-                <label>
-                    Phone Number
-                    <input type="text" value={this.state.phoneNumber} onChange={this.handleChange} />
-                </label>
-                <br></br>
-                <label>
-                    Location
-                    <input type="text" value={this.state.location} onChange={this.handleChange} />
-                </label>
-                <br></br>
-                <lable>
-                    Test Results
-                    <input type="text" value={this.state.testResults} onChange={this.handleChange} />
-                </lable>
-                <br></br>
-                <input type="submit" value="Start Tracing"/>
-            </form>
+                <form class="traceform" classonSubmit={this.handleSubmit}>
+                    <label>
+                        Full Name
+                        <br></br>
+                        <input type="text" value={this.state.fullName} onChange={this.handleChange} />
+                    </label>
+                    <br></br>
+                    <label>
+                        Phone Number
+                        <br></br>
+                        <input type="text" value={this.state.phoneNumber} onChange={this.handleChange} />
+                    </label>
+                    <br></br>
+                    <label>
+                        Location
+                        <br></br>
+                        <input type="text" value={this.state.location} onChange={this.handleChange} />
+                    </label>
+                    <br></br>
+                    <lable>
+                        Test Results
+                        <br></br>
+                        <input type="text" value={this.state.testResults} onChange={this.handleChange} />
+                    </lable>
+                    <br></br>
+                    <div id="startBtnParent">
+                        <input id="startBtn" type="submit" value="Start Tracing"/>
+                    </div>
+                </form>
+            </div>
         );
     }
 }

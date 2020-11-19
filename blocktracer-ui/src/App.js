@@ -7,7 +7,7 @@ function App() {
       <div id="header">
         <h1>BlockTracer</h1>
       </div>
-      <StartTrace />
+        <StartTrace />
     </div>
   );
 }
