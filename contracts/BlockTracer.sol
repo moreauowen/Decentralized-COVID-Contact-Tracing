@@ -49,7 +49,7 @@ contract BlockTracer {
      * Complete this before next meeting
      */
     function inviteToChain() public view returns (bool) {
-
+        // Test in local environment before developing this
     }
 
     /**
