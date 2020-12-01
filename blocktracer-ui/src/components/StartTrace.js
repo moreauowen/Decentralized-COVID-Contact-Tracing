@@ -24,7 +24,7 @@ class StartTrace extends Component {
     }
 
     handleSubmit(event) {
-
+        console.log(this.state);
         event.preventDefault();
     }
 
@@ -34,7 +34,7 @@ class StartTrace extends Component {
             <div id="startTrace">
                 <h2>Start a trace investigation...</h2>
                 <br></br>
-                <form class="traceform" classonSubmit={this.handleSubmit}>
+                <form className="traceform" classonSubmit={this.handleSubmit}>
                     <label>
                         Full Name
                         <br></br>
