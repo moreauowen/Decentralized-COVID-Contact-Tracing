@@ -18,7 +18,7 @@
  *
  */
 
-const HDWalletProvider = require('@truffle/hdwallet-provider');
+//const HDWalletProvider = require('@truffle/hdwallet-provider');
 // const infuraKey = "fj4jll3k.....";
 //
 const fs = require('fs');
@@ -60,6 +60,7 @@ module.exports = {
     // NB: It's important to wrap the provider as a function.
 
     // TODO - Create Infura Project for testing and update project ID below
+    /*
     ropsten: {
       provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
       network_id: 3,       // Ropsten's id
@@ -68,6 +69,7 @@ module.exports = {
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
+    */
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
