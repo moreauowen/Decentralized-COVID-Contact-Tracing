@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import StartTrace from './StartTrace';
 import JoinTrace from './JoinTrace';
 
@@ -40,10 +41,10 @@ class Home extends Component {
                     <div id="homeOptions">
                         <h2>Lets get started!</h2>
                         <div class="left">
-                            <button type="button" class="homeBtn" id="homeStartBtn" onClick={this.handleButtonClick}>Start Trace</button>
+                            <Link class="homeBtn" to="/start">Start Trace</Link>
                         </div>
                         <div class="right">
-                            <button type="button" class="homeBtn" id="homeJoinBtn" onClick={this.handleButtonClick}>Join Trace</button>
+                            <Link class="homeBtn" to="/join">Join Trace</Link>
                         </div>
                         <br></br>
                         <h3>...already on BlockTracer?</h3>
