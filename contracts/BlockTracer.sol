@@ -26,10 +26,7 @@ contract BlockTracer {
         bytes32 uniqueId = stringToBytes32(s);
 
         // Check to see if traceChain has been created or not
-        if(traceChains[uniqueId].length != 0) {
-            return false;
-        }
-        require(traceChains[uniqueId].length != 0, "User already started a trace chain!");
+        require(traceChains[uniqueId].length == 0, "User already started a trace chain!");
         
         // Check to see if contact info is saved for this user
         string memory contact = contactInfo[uniqueId];
@@ -44,6 +41,7 @@ contract BlockTracer {
         // At this point, it is successfully created
         return true;
     }
+    
 
     /**
      * Complete this before next meeting
