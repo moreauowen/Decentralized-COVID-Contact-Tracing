@@ -1,1 +1,3 @@
 /build/contracts
+.secret
+/node-modules

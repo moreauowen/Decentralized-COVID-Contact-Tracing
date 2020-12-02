@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css';
-import { blockTracerContract, account0 } from './config'
+
 import StartTrace from './components/StartTrace';
 import JoinTrace from './components/JoinTrace';
 import BlockTracerHeader from './components/BlockTracerHeader';
@@ -10,7 +10,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 class App extends Component {
   constructor(props) {
     super(props);
-    
+    // No need to have constructor if it is not doing anything
+    // This App.js component can be a functional component instead
   }
 
   render() {
