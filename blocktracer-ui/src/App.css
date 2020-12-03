@@ -39,6 +39,12 @@ a {
   font-size: 20px;
 }
 
+#joinTrace {
+  margin: auto;
+  width: 700px;
+  padding: 50px;
+}
+
 input[type=text] {
   width: 100%;
   padding: 12px 20px;
@@ -46,6 +52,17 @@ input[type=text] {
   box-sizing: border-box;
   border-radius: 10px;
   font-size: 20px;
+}
+
+#testResults {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border-width: 2px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 #startBtnParent {
@@ -144,4 +161,9 @@ input[type=text] {
 .homeBtn:hover {
   background-color: #3A2FBB;
   color: white;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
