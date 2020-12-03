@@ -26,7 +26,7 @@ class Home extends Component {
         return (
             <div id="home">
                 <div id="welcomeMenu">
-                    <h1>Welcome to BlockTracer...</h1>
+                    <h1>Welcome to BlockTracer</h1>
                     <div id="welcomeColumn">
                         <div class="left">
                             <h3>What is BlockTracer?</h3>

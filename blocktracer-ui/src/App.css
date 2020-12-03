@@ -20,12 +20,12 @@ a {
 
 #blockTracerHeader {
   width: 100%;
-  padding-left: 50px;
+  background-color: #7DDE92;
+  color: white;
+  text-align: center;
+  height: 125px;
   padding-top: 25px;
-  padding-bottom: 25px;
-  background-color: #FFA500;
-  color: black;
-  font-size: 28px;
+  font-size: 20px;
 }
 
 #startTrace {
@@ -82,7 +82,7 @@ input[type=text] {
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 50px;
-  background-color: #F2EFEA;
+  background-color: #F8FFE5;
   color: black;
   padding-bottom: 100px;
 }
@@ -144,4 +144,18 @@ input[type=text] {
 .homeBtn:hover {
   background-color: #3A2FBB;
   color: white;
+}
+
+.headerlinks {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.headerlinks:hover {
+  color: white;
+}
+
+#headertitle {
+  font-size: 40px;
+  padding-bottom: 20px;
 }
