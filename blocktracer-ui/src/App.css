@@ -184,3 +184,9 @@ input[type=text] {
 #stats {
   line-height: 3;
 }
+
+#dashInput {
+  width: 50%;
+  padding: 0;
+  margin-left: 20px;
+}
