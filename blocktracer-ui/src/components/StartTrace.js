@@ -42,7 +42,7 @@ class StartTrace extends Component {
         return (
             <div id="startTrace">
                 <h2>Start a trace investigation...</h2>
-                <br></br>
+                <hr></hr>
                 <form className="traceform" onSubmit={this.handleSubmit}>
                     <label>
                         Full Name
@@ -63,14 +63,16 @@ class StartTrace extends Component {
                     </label>
                     <br></br>
                     <label>
-                        Test Results
+                        COVID-19 Test Results:
                         <br></br>
-                        <input type="text" id='testResults' value={this.state.testResults} onChange={this.handleChange} />
+                        <select name="testResults" id="testResults" onChange={this.handleChange}>
+                           <option value="tbd">TBD</option>
+                           <option value="positive">Positive</option>
+                           <option value="negative">Negative</option> 
+                        </select>
                     </label>
-                    <br></br>
-                    <div id="startBtnParent">
-                        <input id="startBtn" type="submit" value="Start Tracing"/>
-                    </div>
+                    <hr></hr>
+                    <input type="submit" value="Start Tracing"/>
                 </form>
                 {this.state.success ? <h3>Success</h3> : <h3>Not sent yet</h3>}
             </div>

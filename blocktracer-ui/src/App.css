@@ -31,13 +31,8 @@ a {
 
 #startTrace {
   margin: auto;
-  margin-top: 5%;
+  width: 700px;
   padding: 50px;
-  width: 500px;
-  border-radius: 20px;
-  background-color: #3A2FBB;
-  color: white;
-  font-size: 20px;
 }
 
 #joinTrace {
