@@ -12,7 +12,7 @@ contract BlockTracer {
       * - Need to ensure this user has not already started a trace chain.
       * - Need to save contact info if not saved.
       */
-    function startTraceChain(string memory fullName, string memory phone, string memory location) public returns (bytes32) {
+    function startTraceChain(string memory fullName, string memory phone, string memory location, bool positive) public returns (bytes32) {
         bytes32 uniqueId = getUniqueID(fullName, phone, location);
 
         // Check to see if traceChain has been created or not
@@ -27,6 +27,11 @@ contract BlockTracer {
         
         // Create new traceChain
         traceChains[uniqueId] = [uniqueId];
+        
+        // Keep track of test result
+        if(positive) {
+            testResults[uniqueId] = true;
+        }
 
         // At this point, it is successfully created -> return ID of chain
         return uniqueId;
@@ -36,7 +41,7 @@ contract BlockTracer {
     /**
      * Complete this before next meeting
      */
-    function joinChain(string memory fullName, string memory phone, string memory location, bytes32 chainId) public returns (bool) {
+    function joinChain(string memory fullName, string memory phone, string memory location, bytes32 chainId, bool positive) public returns (bool) {
         bytes32 uniqueId = getUniqueID(fullName, phone, location);
 
         // Check to see if this uniqueId is already in the traceChain
@@ -55,16 +60,33 @@ contract BlockTracer {
         // Finally, add to chain
         traceChains[chainId].push(uniqueId);
         
+        // Keep track of test result
+        if(positive) {
+            testResults[uniqueId] = true;
+        }
+        
         // Return true when successfully added to chain
         return true;
     }
     
     /**
-     * @dev Updates a user's test results
+     * @dev Returns the length of the chain with matching chainID.
      */
-    function updateTestResults(string memory fullName, string memory phone, string memory location, bool results) public returns (bool){
-        bytes32 uniqueId = getUniqueID(fullName, phone, location);
-        // TODO- finish this!
+    function getLengthOfChain(bytes32 chainID) public view returns (uint) {
+        return traceChains[chainID].length;
+    }
+    
+    /**
+     * @dev Returns the number of positive test cases in the chain.
+     */
+    function getNumPositiveTests(bytes32 chainID) public view returns (int256) {
+        int256 numPositive = 0;
+        for(uint i = 0; i < traceChains[chainID].length; i++) {
+            if(testResults[traceChains[chainID][i]] == true) {
+                numPositive += 1;
+            }   
+        }
+        return numPositive;
     }
     
     /**
