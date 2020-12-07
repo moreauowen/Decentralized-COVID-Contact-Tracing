@@ -26,6 +26,7 @@ a {
   height: 125px;
   padding-top: 25px;
   font-size: 20px;
+  margin-bottom: 50px;
 }
 
 #startTrace {
@@ -175,4 +176,16 @@ input[type=text] {
 #headertitle {
   font-size: 40px;
   padding-bottom: 20px;
+}
+
+#dashboard {
+  background-color: white;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  padding: 50px;
+}
+
+#stats {
+  line-height: 3;
 }
