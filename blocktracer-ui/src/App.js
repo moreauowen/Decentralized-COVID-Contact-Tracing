@@ -5,6 +5,8 @@ import StartTrace from './components/StartTrace';
 import JoinTrace from './components/JoinTrace';
 import BlockTracerHeader from './components/BlockTracerHeader';
 import Home from './components/Home';
+import Dashboard from './components/Dashboard'
+
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
@@ -23,6 +25,7 @@ class App extends Component {
           <Route path='/' component={Home} exact/>
           <Route path='/start' component={StartTrace}/>
           <Route path='/join' component={JoinTrace} />
+          <Route path='/dashboard' component={Dashboard} />
           </Switch>
         </div>
       </BrowserRouter>

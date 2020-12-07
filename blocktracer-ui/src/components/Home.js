@@ -26,7 +26,7 @@ class Home extends Component {
         return (
             <div id="home">
                 <div id="welcomeMenu">
-                    <h1>Welcome to BlockTracer...</h1>
+                    <h1>Welcome to BlockTracer</h1>
                     <div id="welcomeColumn">
                         <div class="left">
                             <h3>What is BlockTracer?</h3>
@@ -47,8 +47,7 @@ class Home extends Component {
                             <Link class="homeBtn" to="/join">Join Trace</Link>
                         </div>
                         <br></br>
-                        <h3>...already on BlockTracer?</h3>
-                        <button type="button" class="homeBtn" id="homeSignInBtn" onClick={this.handleButtonClick}>Sign In</button>
+                        <Link id="dashBtn" class="homeBtn" to='/dashboard'>Dashboard</Link>
                     </div>
                 </div>
             </div>
