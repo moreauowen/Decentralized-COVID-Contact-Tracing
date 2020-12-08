@@ -44,10 +44,11 @@ class Dashboard extends Component {
         return(
             <div id="dashboard">
                 <h2>Dashboard</h2>
+                <hr></hr>
                 <p>Enter the ChainID of the chain you want info on:</p>
                 <form id="dashboardform" onSubmit={this.handleSubmit}>
                     <input id="searchID" type="text" value={this.state.searchID} onChange={this.handleChange}/>
-                    <input id="dashBtn" type="submit" value="Get Info"/>
+                    <input className="btn" type="submit" value="Get Info"/>
                 </form>
                 <br />
                 <hr />

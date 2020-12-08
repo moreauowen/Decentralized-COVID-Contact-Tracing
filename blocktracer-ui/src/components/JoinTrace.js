@@ -78,7 +78,7 @@ class JoinTrace extends Component {
                         </select>
                     </label>
                     <hr></hr>
-                    <input type="submit" value="Join Trace"/>
+                    <input className="btn" type="submit" value="Join Trace Chain"/>
                 </form>
                 {this.state.success ? <h3>Success</h3> : <h3>Not sent yet</h3>}
             </div>

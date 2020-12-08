@@ -30,14 +30,18 @@ a {
 }
 
 #startTrace {
+  background-color: white;
   margin: auto;
-  width: 700px;
+  border-radius: 10px;
+  width: 50%;
   padding: 50px;
 }
 
 #joinTrace {
+  background-color: white;
   margin: auto;
-  width: 700px;
+  border-radius: 10px;
+  width: 50%;
   padding: 50px;
 }
 
@@ -63,6 +67,11 @@ input[type=text] {
 
 #startBtnParent {
   text-align: center;
+}
+
+hr {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 #startBtn {
@@ -176,7 +185,7 @@ input[type=text] {
 #dashboard {
   background-color: white;
   border-radius: 10px;
-  width: 80%;
+  width: 50%;
   margin: auto;
   padding: 50px;
 }
@@ -189,4 +198,20 @@ input[type=text] {
   width: 50%;
   padding: 0;
   margin-left: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border-style: solid;
+  background-color: white;
+}
+
+.btn:hover {
+  background-color: #7DDE92;
+}
+
+#searchID {
+  width: 80%;
+  margin-right: 10px;
 }

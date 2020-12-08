@@ -82,7 +82,7 @@ class StartTrace extends Component {
                         </select>
                     </label>
                     <hr></hr>
-                    <input type="submit" value="Start Tracing"/>
+                    <input className="btn" type="submit" value="Start Trace Chain"/>
                 </form>
                 {this.state.success ? <h3>Success</h3> : <h3>Not sent yet</h3>}
                 {this.state.chainID}
