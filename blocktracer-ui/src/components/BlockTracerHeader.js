@@ -10,7 +10,7 @@ function BlockTracerHeader() {
                 <Link class="headerlinks" to='/dashboard'>Dashboard</Link>
                 <Link class="headerlinks" to="/start">Start a Trace Chain</Link>
                 <Link class="headerlinks" to="/join">Join a Trace Chain</Link>
-                <Link class="headerlinks" to='/signin'>Sign In</Link>
+
             </div>
         </div>
     );
