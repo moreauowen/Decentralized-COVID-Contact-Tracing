@@ -9,7 +9,7 @@ class JoinTrace extends Component {
             fullName: '',
             phoneNum: '',
             location: '',
-            testResults: 'tbd',
+            testResults: '',
             success: false
         }
 
@@ -17,20 +17,20 @@ class JoinTrace extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({
-            chainID: event.target.chainID,
-            fullName: event.target.fullName,
-            phoneNum: event.target.phoneNum,
-            location: event.target.location,
-            testResults: event.target.testResults
-        });
+    handleChange = e => {
+        this.setState({ [e.target.id]: e.target.value })
     }
 
     handleSubmit(event) {
         event.preventDefault();
-
-        blockTracerContract.methods.joinChain(this.state.chainID, this.state.fullName, this.state.phoneNum, this.state.location, this.state.testResults)
+        let results = (this.state.testResults === "positive") ? true : false;
+        console.log(`submitted: results are ${this.state.testResults}`)
+        blockTracerContract.methods.joinChain( 
+            this.state.fullName, 
+            this.state.phoneNum, 
+            this.state.location,
+            this.state.chainID,
+            results)
         .send({ from: account0, gas: 150000}, (err, transactionHash) => {
             if (!err) {
                 this.setState({
@@ -51,22 +51,22 @@ class JoinTrace extends Component {
                     <label>
                         Trace Chain's Unique ID:
                         <br></br>
-                        <input type="text" value={this.state.chainID} onChange={this.handleChange} />
+                        <input id="chainID" type="text" value={this.state.chainID} onChange={this.handleChange} />
                     </label>
                     <label>
                         Full Name:
                         <br></br>
-                        <input type="text" value={this.state.fullName} onChange={this.handleChange} />
+                        <input id="fullName" type="text" value={this.state.fullName} onChange={this.handleChange} />
                     </label>
                     <label>
                         Phone Number:
                         <br></br>
-                        <input type="text" value={this.state.phoneNum} onChange={this.handleChange} />
+                        <input id="phoneNum" type="text" value={this.state.phoneNum} onChange={this.handleChange} />
                     </label>
                     <label>
                         Location:
                         <br></br>
-                        <input type="text" value={this.state.location} onChange={this.handleChange} />
+                        <input id="location" type="text" value={this.state.location} onChange={this.handleChange} />
                     </label>
                     <label>
                         COVID-19 Test Results:
@@ -80,6 +80,7 @@ class JoinTrace extends Component {
                     <hr></hr>
                     <input type="submit" value="Join Trace"/>
                 </form>
+                {this.state.success ? <h3>Success</h3> : <h3>Not sent yet</h3>}
             </div>
         );
     }

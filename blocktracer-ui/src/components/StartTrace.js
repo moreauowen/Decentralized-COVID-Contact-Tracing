@@ -10,7 +10,8 @@ class StartTrace extends Component {
             phoneNumber: '',
             location: '',
             testResults: '',
-            success: false
+            success: false,
+            chainID: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -23,8 +24,9 @@ class StartTrace extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-
-        blockTracerContract.methods.startTraceChain(this.state.fullName, this.state.phoneNumber, this.state.location)
+        let result = (this.state.testResults === "positive") ? true : false;
+        console.log(`submitted: results are ${result}`)
+        blockTracerContract.methods.startTraceChain(this.state.fullName, this.state.phoneNumber, this.state.location, result)
         .send({ from: account0, gas: 150000 }, (err, transactionHash) => {
           if (!err) {
             this.setState({
@@ -34,6 +36,14 @@ class StartTrace extends Component {
               console.log(err);
           }
         })
+
+        blockTracerContract.methods.getUniqueID(this.state.fullName, this.state.phoneNumber, this.state.location)
+        .call()
+        .then(id => {
+            this.setState({
+                chainID: id
+            });
+        });
 
     }
 
@@ -75,6 +85,7 @@ class StartTrace extends Component {
                     <input type="submit" value="Start Tracing"/>
                 </form>
                 {this.state.success ? <h3>Success</h3> : <h3>Not sent yet</h3>}
+                {this.state.chainID}
             </div>
         );
     }

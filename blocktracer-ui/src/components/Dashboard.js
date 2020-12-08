@@ -1,39 +1,60 @@
 import React, { Component } from 'react';
+import { blockTracerContract } from '../config';
 
 class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            searchID: '',
             chainID: '',
-            dateCreated: '',
-            contactCount: '',
+            contactCount: 0,
+            numPositive: 0,
             posPercent: '',
-            negPercent: '',
-            tbdPercent: ''
+            negPercent: ''
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        blockTracerContract.methods.getLengthOfChain(this.state.searchID)
+            .call()
+            .then(len => {
+                this.setState({
+                    contactCount: len
+                })
+            })
+
+        blockTracerContract.methods.getNumPositiveTests(this.state.searchID)
+            .call()
+            .then(num => {
+                this.setState({
+                    numPositive: num,
+                    chainID: this.state.searchID
+                })
+            })
+    }
+
+    handleChange = e => {
+        this.setState({ [e.target.id]: e.target.value })
     }
 
     render() {
         return(
             <div id="dashboard">
                 <h2>Dashboard</h2>
-                <form id="dashboardform">
-                    <input id="dashBtn" type="submit" value="Enter"/>
-                    <input id="dashInput" type="text"></input>
+                <p>Enter the ChainID of the chain you want info on:</p>
+                <form id="dashboardform" onSubmit={this.handleSubmit}>
+                    <input id="searchID" type="text" value={this.state.searchID} onChange={this.handleChange}/>
+                    <input id="dashBtn" type="submit" value="Get Info"/>
                 </form>
-                <hr></hr>
+                <br />
+                <hr />
                 <div id="stats">
-                    <a>Chain ID: {this.state.chainID}</a>
-                    <br></br>
-                    <a>Date Created: {this.state.dateCreated}</a>
-                    <br></br>
-                    <a>Contacts on Chain: {this.state.contactCount}</a>
-                    <br></br>
-                    <a>% of Positive Cases: {this.state.negPercent}</a>
-                    <br></br>
-                    <a>% of Negative Cases: {this.state.posPercent}</a>
-                    <br></br>
-                    <a>% of TBD Cases: {this.state.tbdPercent}</a>
+                    <p>Chain ID: {this.state.chainID}</p>
+                    <p>Contacts on Chain: {this.state.contactCount}</p>
+                    <p>Num Positive Cases: {this.state.numPositive}</p>
                 </div>
             </div> 
         );
