@@ -17,7 +17,11 @@ class Dashboard extends Component {
         return(
             <div id="dashboard">
                 <h2>Dashboard</h2>
-                <br></br>
+                <form id="dashboardform">
+                    <input id="dashBtn" type="submit" value="Enter"/>
+                    <input id="dashInput" type="text"></input>
+                </form>
+                <hr></hr>
                 <div id="stats">
                     <a>Chain ID: {this.state.chainID}</a>
                     <br></br>
