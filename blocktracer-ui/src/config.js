@@ -8,4 +8,8 @@ let blockTracerAddress = '0x82724e79D7404429934a17879a17A4E92DB559BD';
 
 // Export to use in React app
 const blockTracerContract = new web3.eth.Contract(blockTracerABI, blockTracerAddress);
-export { blockTracerContract, account0};
+
+const IPFS = require('ipfs-api');
+const ipfs = new IPFS({ host: "ipfs.infura.io", port: 5001, protocol: "https" });
+
+export { blockTracerContract, account0, ipfs};
